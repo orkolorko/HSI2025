@@ -147,39 +147,39 @@
         ```
     - We would like to be able not to worry about the input type, but types are something we can work with in Julia, to do so we use the `typeof` function
     - ```julia
-  function orbit(T, x0, N)
-     orb = zeros(typeof(x0), N)
-     x = x0
-     for i in 1:N
-        orb[i] = x
-        x = T(x)
-     end
-     return orb
-  end
-  ```
+        function orbit(T, x0, N)
+            orb = zeros(typeof(x0), N)
+            x = x0
+            for i in 1:N
+                orb[i] = x
+                x = T(x)
+            end
+            return orb
+        end
+    ```
     - This is similar to what is achieved in C++ by using templates, but it is simpler to use
 - ## Plotting the histogram of an orbit
     - We would like to plot the histogram of an orbit, to visualize the frequency of visits of the dynamical system  $T:[0,1]\to [0,1]$ , $T(x)=4x(1-x)$ , in different parts of the interval
     - Since we already have implemented the orbit function this is quite easy
     - We need to install the Plots package (it takes some time)
     - ```julia
-  Pkg.add("Plots")
-  using Plots
-  ```
+        Pkg.add("Plots")
+        using Plots
+    ```
     - Now, we define our dynamical system and compute an orbit that starts at the point $x0=0.1$
     - It is worth remarking that this is a numerical experiment
     - ```julia
-  T(x) = 4*x*(1-x)
-  v = orbit(T, 0.1, 10000)
-  plt = histogram(v, normalize = :pdf, label = "Empirical", bins = 100)
-  plt
-  ```
+        T(x) = 4*x*(1-x)
+        v = orbit(T, 0.1, 10000)
+        plt = histogram(v, normalize = :pdf, label = "Empirical", bins = 100)
+        plt
+    ```
     - In this case the density distribution of orbits is known
   $$g(x)=\frac{1}{\pi \sqrt{x(1-x)}}$$
     - ```julia
-  g(x) = 1/(pi*(sqrt(x*(1-x))))
-  plot!(plt, g, 0, 1, color=:orange, label = "Density")
-  ```
+        g(x) = 1/(pi*(sqrt(x*(1-x))))
+        plot!(plt, g, 0, 1, color=:orange, label = "Density")
+    ```
     - The command plot! allows us to plot on top of an already made plot
 - ## Summary of the lecture
 	- We installed Julia and VScode
