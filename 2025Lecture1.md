@@ -1,4 +1,4 @@
-## Why Julia
+- ## Why Julia
 	- Terse sintax
 	- Easy to write, similar to mathematics
 	- Syntactic sugar
