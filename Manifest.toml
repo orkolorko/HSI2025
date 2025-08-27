@@ -2,7 +2,7 @@
 
 julia_version = "1.11.6"
 manifest_format = "2.0"
-project_hash = "3b492d505c650e13f3bd3f338725f40a87a38c94"
+project_hash = "04ce72ba07c7307f4cc089c4924eb3a67ff1fb00"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "60665b326b75db6517939d0e1875850bc4a54368"
@@ -169,6 +169,19 @@ git-tree-sha1 = "3b642331600250f592719140c60cf12372b82d66"
 uuid = "ab4f0b2a-ad5b-11e8-123f-65d77653426b"
 version = "0.5.1"
 
+[[deps.BallArithmetic]]
+deps = ["LinearAlgebra", "MacroTools", "OpenBLASConsistentFPCSR_jll", "RoundingEmulator", "SetRounding"]
+git-tree-sha1 = "dc111b32c581207746bc17d501a15078d15eb4d2"
+repo-rev = "main"
+repo-url = "https://github.com/JuliaBallArithmetic/BallArithmetic.jl.git"
+uuid = "77e4f72b-b5a4-4fb0-ac2a-dcc32095a072"
+version = "0.1.1"
+weakdeps = ["FFTW", "IntervalArithmetic"]
+
+    [deps.BallArithmetic.extensions]
+    FFTExt = "FFTW"
+    IntervalArithmeticExt = "IntervalArithmetic"
+
 [[deps.BandedMatrices]]
 deps = ["ArrayLayouts", "FillArrays", "LinearAlgebra", "PrecompileTools"]
 git-tree-sha1 = "e35c672b239c5105f597963c33e740eeb46cf0ab"
@@ -257,7 +270,7 @@ version = "5.8.3"
     SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 
 [[deps.CUDA_Compiler_jll]]
-deps = ["Artifacts", "CUDA_Driver_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "TOML"]
+deps = ["Artifacts", "CUDA_Driver_jll", "CUDA_Runtime_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "TOML"]
 git-tree-sha1 = "fdb9ddf3e08e2aca4c84b3252df2dea046caadee"
 uuid = "d1e2174e-dfdc-576e-b43e-73b79eb1aca8"
 version = "0.2.0+1"
@@ -1545,6 +1558,12 @@ deps = ["Artifacts", "JLLWrappers", "Libdl"]
 git-tree-sha1 = "b6aa4566bb7ae78498a5e68943863fa8b5231b59"
 uuid = "e7412a2a-1a6e-54c0-be00-318e2571c051"
 version = "1.3.6+0"
+
+[[deps.OpenBLASConsistentFPCSR_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "567515ca155d0020a45b05175449b499c63e7015"
+uuid = "6cdc7f73-28fd-5e50-80fb-958a8875b1af"
+version = "0.3.29+0"
 
 [[deps.OpenBLAS_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
